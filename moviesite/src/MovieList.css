@@ -1,0 +1,145 @@
+.movie-list {
+     display: flex;
+     flex-wrap: wrap;
+     gap: 20px;
+     /* Space between movie items */
+     justify-content: center;
+     /* Center the movie items */
+     padding: 20px;
+     /* Padding around the movie list */
+}
+
+.movie-item {
+     width: 200px;
+     /* Fixed width for movie items */
+     text-align: center;
+     /* Center text */
+     cursor: pointer;
+     /* Pointer cursor on hover */
+     transition: transform 0.3s;
+     /* Smooth scale transition */
+     border: 1px solid #ccc;
+     /* Light border around movie items */
+     border-radius: 8px;
+     /* Rounded corners */
+     overflow: hidden;
+     /* Prevent overflow */
+     background-color: #f8f8f8;
+     /* Light background for movie items */
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+     /* Soft shadow effect */
+}
+
+.movie-image {
+     width: 100%;
+     /* Full width image */
+     border-radius: 8px 8px 0 0;
+     /* Rounded top corners */
+     transition: transform 0.3s, box-shadow 0.3s;
+     /* Smooth transition for scale and shadow */
+}
+
+.movie-image:hover {
+     transform: scale(1.05);
+     /* Scale image on hover */
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+     /* Shadow effect on hover */
+}
+
+.movie-title {
+     font-size: 18px;
+     /* Font size for movie title */
+     font-weight: bold;
+     /* Bold title */
+     margin-top: 10px;
+     /* Space above the title */
+}
+
+/* Full-Screen Movie Styles */
+.full-screen-movie {
+     position: fixed;
+     /* Fixed positioning for full-screen overlay */
+     top: 0;
+     left: 0;
+     width: 100%;
+     /* Full width */
+     height: 100%;
+     /* Full height */
+     background-color: rgba(0, 0, 0, 0.9);
+     /* Dark semi-transparent background */
+     display: flex;
+     /* Flexbox for centering */
+     justify-content: center;
+     /* Center content horizontally */
+     align-items: center;
+     /* Center content vertically */
+     z-index: 1000;
+     /* Above all other content */
+     animation: fadeIn 0.5s;
+     /* Fade-in effect */
+}
+
+@keyframes fadeIn {
+     from {
+          opacity: 0;
+          /* Start with opacity 0 */
+     }
+
+     to {
+          opacity: 1;
+          /* End with full opacity */
+     }
+}
+
+.full-screen-content {
+     background-color: #fff;
+     /* White background for content */
+     padding: 20px;
+     /* Padding inside content */
+     border-radius: 8px;
+     /* Rounded corners */
+     max-width: 800px;
+     /* Max width for content */
+     text-align: center;
+     /* Center text */
+     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+     /* Soft shadow effect */
+     position: relative;
+     /* Position relative for close button */
+}
+
+.full-screen-image {
+     width: 100%;
+     /* Full width for full-screen image */
+     max-height: 400px;
+     /* Max height for full-screen image */
+     object-fit: cover;
+     /* Cover the area without distortion */
+     border-radius: 8px;
+     /* Rounded corners */
+     margin-bottom: 20px;
+     /* Space below the image */
+}
+
+.close-button {
+     position: absolute;
+     /* Position absolute for close button */
+     top: 20px;
+     /* Space from the top */
+     right: 20px;
+     /* Space from the right */
+     background: none;
+     /* No background */
+     border: none;
+     /* No border */
+     color: white;
+     /* White color for close button */
+     font-size: 24px;
+     /* Font size for close button */
+     cursor: pointer;
+     transition: color 0.3s;
+}
+
+.close-button:hover {
+     color: red;
+}

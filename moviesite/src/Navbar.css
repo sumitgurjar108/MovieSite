@@ -1,0 +1,136 @@
+/* Navbar.css */
+
+body {
+     margin: 0;
+     font-family: 'Arial', sans-serif;
+     /* Set a clean font for the body */
+}
+
+.navbar {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     background-color: #1a1a1a;
+     /* Dark background for the navbar */
+     padding: 15px 30px;
+     /* Padding around the navbar */
+     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+     /* Soft shadow effect */
+     transition: background-color 0.3s, padding 0.3s;
+     /* Smooth transition */
+     position: sticky;
+     /* Sticky navbar */
+     top: 0;
+     /* Stick to the top */
+     z-index: 1000;
+     /* Ensure it's above other content */
+}
+
+.navbar:hover {
+     background-color: #222;
+     /* Darken background on hover */
+     padding: 10px 30px;
+     /* Slightly reduce padding on hover */
+}
+
+.logo h2 {
+     color: #ffa500;
+     /* Logo color */
+     margin: 0;
+     font-size: 28px;
+     /* Logo font size */
+     letter-spacing: 1px;
+     /* Spacing between letters */
+     transition: color 0.3s;
+     /* Smooth color transition */
+}
+
+.logo h2:hover {
+     color: #ffd700;
+     /* Change logo color on hover */
+}
+
+.nav-links {
+     list-style: none;
+     /* Remove bullet points */
+     display: flex;
+     /* Display links in a row */
+     margin: 0;
+     /* Remove default margin */
+     padding: 0;
+     /* Remove default padding */
+}
+
+.nav-links li {
+     margin-left: 30px;
+     /* Space between links */
+     position: relative;
+     /* Enable positioning for pseudo-elements */
+}
+
+.nav-links a {
+     text-decoration: none;
+     /* Remove underline */
+     color: white;
+     /* Link color */
+     font-size: 18px;
+     /* Font size for links */
+     padding: 5px 0;
+     /* Padding for link */
+     transition: color 0.3s;
+     /* Smooth transition for hover effect */
+}
+
+.nav-links a:hover {
+     color: #ffa500;
+     /* Change link color on hover */
+}
+
+/* Adding a border effect on hover */
+.nav-links li::after {
+     content: '';
+     position: absolute;
+     width: 0;
+     height: 2px;
+     background: #ffa500;
+     /* Border color */
+     left: 50%;
+     /* Center it */
+     bottom: -5px;
+     /* Position it below the link */
+     transition: width 0.3s, left 0.3s;
+     /* Smooth transition */
+}
+
+.nav-links li:hover::after {
+     width: 100%;
+     /* Expand to full width on hover */
+     left: 0;
+     /* Align to the left */
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+     .navbar {
+          flex-direction: column;
+          /* Stack items vertically */
+          align-items: flex-start;
+          /* Align items to the left */
+          padding: 10px;
+          /* Reduce padding */
+     }
+
+     .nav-links {
+          flex-direction: column;
+          /* Stack links vertically */
+          margin-top: 10px;
+          /* Space above links */
+     }
+
+     .nav-links li {
+          margin-left: 0;
+          /* Remove left margin for stacked links */
+          margin-bottom: 10px;
+          /* Space below each link */
+     }
+}
